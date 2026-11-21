@@ -1,0 +1,1815 @@
+<!DOCTYPE html>
+<html lang="sv">
+
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>G-sson Byggkonsult | Projektledning & Entreprenad</title>
+
+<meta
+    name="description"
+    content="G-sson Byggkonsult erbjuder kvalificerade konsulttjänster inom projektledning, byggledning, entreprenad och projektgenomförande."
+>
+
+<style>
+
+/* =========================================================
+   GRUND
+   ========================================================= */
+
+:root {
+    --cream: #f8f4ec;
+    --cream-light: #fbf8f2;
+
+    --green: #3f5848;
+    --green-dark: #183126;
+    --green-deep: #15271f;
+
+    --gold: #ad7f38;
+    --gold-light: #c3995c;
+
+    --text: #26352d;
+    --soft: #59635d;
+
+    --border: rgba(34, 55, 43, 0.15);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: var(--text);
+    background: var(--cream-light);
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.container {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.hero-container {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+
+/* =========================================================
+   HEADER
+   ========================================================= */
+
+.header {
+    height: 105px;
+
+    background: rgba(250, 247, 240, 0.98);
+    border-bottom: 1px solid var(--border);
+
+    display: flex;
+    align-items: center;
+
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+.header-inner {
+    width: min(1240px, calc(100% - 80px));
+    margin: 0 auto;
+
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+
+    gap: 42px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    gap: 38px;
+}
+
+.menu a {
+    position: relative;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 15px;
+
+    color: var(--green-dark);
+}
+
+.menu a:hover {
+    color: var(--gold);
+}
+
+.menu a.active {
+    color: var(--gold);
+}
+
+.menu a.active::after {
+    content: "";
+
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: -13px;
+
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.header-contact {
+    background: var(--gold);
+    color: white;
+
+    padding: 16px 22px;
+
+    border-radius: 3px;
+
+    font-family: Georgia, "Times New Roman", serif;
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.header-contact span {
+    margin-left: 14px;
+}
+
+
+/* =========================================================
+   HERO
+   ========================================================= */
+
+.hero {
+    position: relative;
+
+    min-height: 630px;
+
+    background-image: url("images/gsson-hero-bg.png");
+    background-size: cover;
+    background-position: center center;
+    background-repeat: no-repeat;
+
+    overflow: hidden;
+}
+
+.hero::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(250,247,240,0.99) 0%,
+            rgba(250,247,240,0.96) 24%,
+            rgba(250,247,240,0.78) 40%,
+            rgba(250,247,240,0.28) 58%,
+            rgba(250,247,240,0.02) 78%
+        );
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+
+    min-height: 630px;
+
+    display: flex;
+    align-items: center;
+
+    padding-top: 28px;
+    padding-bottom: 24px;
+}
+
+.hero-content {
+    width: 650px;
+    max-width: 52%;
+}
+
+.hero-kicker {
+    display: flex;
+    align-items: center;
+
+    gap: 18px;
+
+    margin-bottom: 17px;
+}
+
+.hero-kicker span {
+    color: var(--gold);
+
+    font-size: 13px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+}
+
+.hero-kicker i {
+    display: block;
+
+    width: 52px;
+    height: 1px;
+
+    background: var(--gold);
+}
+
+.hero h1 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--green-dark);
+
+    font-size: clamp(62px, 5.3vw, 88px);
+    font-weight: 600;
+
+    line-height: 0.94;
+
+    letter-spacing: -4px;
+
+    margin-bottom: 27px;
+}
+
+.hero h1 span {
+    color: var(--gold);
+}
+
+.hero-text {
+    max-width: 585px;
+
+    color: #425249;
+
+    font-size: 15px;
+    line-height: 1.6;
+
+    margin-bottom: 30px;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 14px;
+}
+
+
+/* =========================================================
+   KNAPPAR
+   ========================================================= */
+
+.btn {
+    min-width: 155px;
+    height: 47px;
+
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+
+    gap: 24px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-weight: bold;
+    font-size: 14px;
+
+    transition:
+        background 0.2s ease,
+        color 0.2s ease,
+        transform 0.2s ease;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+}
+
+.btn-primary {
+    color: white;
+
+    background: var(--green);
+
+    border: 1px solid var(--green);
+}
+
+.btn-primary:hover {
+    background: var(--gold);
+    border-color: var(--gold);
+}
+
+.btn-secondary {
+    color: var(--green-dark);
+
+    background: rgba(255,255,255,0.72);
+
+    border: 1px solid var(--green);
+}
+
+.btn-secondary:hover {
+    background: var(--green);
+    color: white;
+}
+
+
+/* =========================================================
+   FRÅN IDÉ TILL VERKLIGHET
+   ========================================================= */
+
+.hero-message {
+    position: absolute;
+
+    top: 48px;
+    right: 31%;
+
+    padding: 17px 24px;
+
+    border-left: 1.5px solid var(--gold);
+    border-top: 1.5px solid var(--gold);
+}
+
+.hero-message::after {
+    content: "";
+
+    position: absolute;
+
+    left: 0;
+    bottom: 0;
+
+    width: 35px;
+    height: 1.5px;
+
+    background: var(--gold);
+}
+
+.hero-message span {
+    display: block;
+
+    color: #986b2e;
+
+    font-size: 12px;
+    font-weight: 800;
+
+    letter-spacing: 3.5px;
+
+    line-height: 1.75;
+}
+
+
+/* =========================================================
+   TJÄNSTERAD PÅ FÖRSTASIDAN
+   ========================================================= */
+
+.service-strip {
+    background: #faf7f0;
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.service-strip-inner {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+
+    min-height: 145px;
+
+    display: grid;
+
+    grid-template-columns:
+        135px
+        1fr
+        1fr
+        1fr
+        205px;
+}
+
+.strip-label {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    font-size: 10px;
+    font-weight: bold;
+
+    letter-spacing: 4px;
+
+    color: #667269;
+}
+
+.strip-label i {
+    width: 30px;
+    height: 2px;
+
+    background: var(--gold);
+
+    margin-top: 12px;
+}
+
+.strip-service {
+    display: grid;
+
+    grid-template-columns: 45px 1fr;
+
+    gap: 10px;
+
+    align-content: center;
+
+    padding: 20px 24px;
+
+    border-right: 1px solid var(--border);
+}
+
+.service-icon {
+    color: var(--green);
+
+    font-family: Georgia, serif;
+
+    font-size: 30px;
+}
+
+.strip-service h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--green-dark);
+
+    font-size: 18px;
+
+    margin-bottom: 5px;
+}
+
+.strip-service p {
+    color: var(--soft);
+
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.strip-more {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    padding-left: 34px;
+}
+
+.strip-more::before {
+    content: "";
+
+    display: block;
+
+    width: 30px;
+    height: 2px;
+
+    background: var(--gold);
+
+    margin-bottom: 10px;
+}
+
+.strip-more > span {
+    font-size: 9px;
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    color: #657267;
+}
+
+.strip-more a {
+    margin-top: 12px;
+
+    font-family: Georgia, serif;
+
+    font-size: 14px;
+
+    color: var(--green-dark);
+}
+
+.strip-more b {
+    margin-left: 15px;
+}
+
+
+/* =========================================================
+   GEMENSAMMA SEKTIONER
+   ========================================================= */
+
+.section-label {
+    color: var(--gold);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 5px;
+
+    margin-bottom: 25px;
+}
+
+h2 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: clamp(46px, 4.4vw, 72px);
+
+    line-height: 1;
+
+    font-weight: 500;
+
+    letter-spacing: -2px;
+}
+
+
+/* =========================================================
+   OM OSS
+   ========================================================= */
+
+.about {
+    background:
+        linear-gradient(
+            90deg,
+            var(--green-dark) 0%,
+            var(--green-dark) 50%,
+            var(--cream-light) 50%,
+            var(--cream-light) 100%
+        );
+
+    padding: 100px 0;
+}
+
+.about-grid {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: 1fr 1fr;
+
+    align-items: center;
+
+    min-height: 390px;
+}
+
+.about-heading {
+    padding-right: 90px;
+}
+
+.about-heading h2 {
+    color: var(--cream-light);
+}
+
+.about-content {
+    padding-left: 55px;
+    padding-right: 80px;
+
+    max-width: 700px;
+}
+
+.about-content p {
+    color: var(--soft);
+
+    font-size: 17px;
+    line-height: 1.75;
+
+    margin-bottom: 24px;
+}
+
+.about-content p:last-child {
+    margin-bottom: 0;
+}
+
+.about-content .lead {
+    color: var(--green-dark);
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 21px;
+    line-height: 1.55;
+
+    font-weight: bold;
+}
+
+
+/* =========================================================
+   TJÄNSTER
+   ========================================================= */
+
+.services {
+    background: var(--cream);
+
+    padding: 105px 0;
+}
+
+.services-container {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.services-heading {
+    display: grid;
+
+    grid-template-columns: 1.1fr 0.9fr;
+
+    gap: 110px;
+
+    align-items: end;
+
+    margin-bottom: 65px;
+}
+
+.services-heading h2 {
+    color: var(--green-dark);
+}
+
+.services-heading p {
+    color: var(--soft);
+
+    font-size: 17px;
+    line-height: 1.7;
+
+    max-width: 500px;
+
+    padding-bottom: 6px;
+}
+
+.service-grid {
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.service-card {
+    min-height: 260px;
+
+    padding: 40px 42px;
+
+    border-right: 1px solid var(--border);
+}
+
+.service-card:last-child {
+    border-right: none;
+}
+
+.service-card > span {
+    color: var(--gold);
+
+    font-size: 11px;
+
+    letter-spacing: 4px;
+
+    font-weight: bold;
+}
+
+.service-card h3 {
+    margin: 31px 0 14px;
+
+    font-family: Georgia, "Times New Roman", serif;
+
+    font-size: 27px;
+    line-height: 1.15;
+
+    color: var(--green-dark);
+}
+
+.service-card p {
+    color: var(--soft);
+
+    font-size: 17px;
+    line-height: 1.65;
+
+    max-width: 380px;
+}
+
+
+/* =========================================================
+   PROJEKT
+   ========================================================= */
+
+.projects {
+    padding: 105px 0 90px;
+
+    background:
+        linear-gradient(
+            120deg,
+            #edf0e9 0%,
+            #fbf8f2 54%,
+            #ede3d4 100%
+        );
+}
+
+.project-container {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.project-grid {
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    gap: 120px;
+
+    align-items: center;
+}
+
+.project-heading h2 {
+    color: var(--green-dark);
+}
+
+.project-content {
+    max-width: 600px;
+}
+
+.project-content p {
+    color: var(--soft);
+
+    font-size: 18px;
+    line-height: 1.75;
+
+    margin-bottom: 25px;
+}
+
+.project-content p:last-child {
+    margin-bottom: 0;
+}
+
+.project-areas {
+    margin-top: 75px;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    border-top: 1px solid var(--border);
+    border-bottom: 1px solid var(--border);
+}
+
+.project-area {
+    min-height: 125px;
+
+    display: flex;
+    align-items: center;
+
+    padding: 25px 36px;
+
+    border-right: 1px solid var(--border);
+}
+
+.project-area:last-child {
+    border-right: none;
+}
+
+.project-area-number {
+    color: var(--gold);
+
+    font-size: 10px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+
+    margin-right: 25px;
+}
+
+.project-area h3 {
+    font-family: Georgia, "Times New Roman", serif;
+
+    color: var(--green-dark);
+
+    font-size: 19px;
+    line-height: 1.25;
+}
+
+
+/* =========================================================
+   KONTAKT
+   ========================================================= */
+
+.contact {
+    background: var(--green-deep);
+
+    padding: 95px 0 82px;
+}
+
+.contact-container {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+}
+
+.contact-grid {
+    display: grid;
+
+    grid-template-columns: 1.05fr 0.95fr;
+
+    gap: 120px;
+
+    align-items: center;
+}
+
+.contact h2 {
+    color: white;
+}
+
+.contact-content {
+    max-width: 590px;
+}
+
+.contact-content p {
+    color: #d0d7d2;
+
+    font-size: 18px;
+    line-height: 1.75;
+
+    margin-bottom: 34px;
+}
+
+.contact-details {
+    display: grid;
+
+    gap: 23px;
+
+    margin-bottom: 34px;
+}
+
+.contact-details span {
+    display: block;
+
+    color: var(--gold-light);
+
+    font-size: 10px;
+    font-weight: 700;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 6px;
+}
+
+.contact-details strong {
+    color: white;
+
+    font-size: 16px;
+}
+
+.btn-gold {
+    background: var(--gold);
+
+    border: 1px solid var(--gold);
+
+    color: white;
+}
+
+.btn-gold:hover {
+    background: #bf9149;
+    border-color: #bf9149;
+}
+
+
+/* =========================================================
+   FOOTER
+   ========================================================= */
+
+.footer {
+    background: #0f1d17;
+
+    border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.footer-inner {
+    width: min(1520px, calc(100% - 80px));
+    margin: 0 auto;
+
+    min-height: 88px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.footer-brand {
+    color: var(--gold-light);
+
+    font-size: 11px;
+    font-weight: 800;
+
+    letter-spacing: 4px;
+}
+
+.footer p {
+    color: #9da69f;
+
+    font-size: 13px;
+}
+
+
+/* =========================================================
+   MELLANSTORA SKÄRMAR
+   ========================================================= */
+
+@media (max-width: 1580px) {
+
+    .hero-container,
+    .service-strip-inner,
+    .about-grid,
+    .services-container,
+    .project-container,
+    .contact-container,
+    .footer-inner {
+        width: calc(100% - 70px);
+    }
+
+    .hero-content {
+        max-width: 56%;
+    }
+
+    .hero-message {
+        right: 28%;
+    }
+
+    .about-heading {
+        padding-right: 65px;
+    }
+
+    .about-content {
+        padding-left: 55px;
+        padding-right: 40px;
+    }
+}
+
+
+/* =========================================================
+   MOBIL
+   ========================================================= */
+
+@media (max-width: 800px) {
+
+    .container,
+    .header-inner,
+    .hero-container,
+    .service-strip-inner,
+    .about-grid,
+    .services-container,
+    .project-container,
+    .contact-container,
+    .footer-inner {
+        width: calc(100% - 36px);
+    }
+
+
+    /* HEADER */
+
+    .header {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .header-inner {
+        justify-content: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .menu {
+        width: 100%;
+
+        overflow-x: auto;
+
+        gap: 20px;
+
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .menu::-webkit-scrollbar {
+        display: none;
+    }
+
+    .header-contact {
+        display: none;
+    }
+
+
+    /* HERO */
+
+    .hero {
+        min-height: 650px;
+
+        background-position: 68% center;
+    }
+
+    .hero::before {
+        background:
+            linear-gradient(
+                180deg,
+                rgba(250,247,240,.98),
+                rgba(250,247,240,.91) 55%,
+                rgba(250,247,240,.3)
+            );
+    }
+
+    .hero-inner {
+        min-height: 650px;
+
+        align-items: flex-start;
+
+        padding-top: 60px;
+    }
+
+    .hero-content {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .hero h1 {
+        font-size: clamp(44px, 11.6vw, 62px);
+
+        letter-spacing: -1.5px;
+    }
+
+    .hero-kicker span {
+        font-size: 12px;
+    }
+
+    .hero-message {
+        display: none;
+    }
+
+    .hero-buttons {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+
+    /* =====================================================
+       TJÄNSTERAD MOBIL
+       ===================================================== */
+
+    .service-strip-inner {
+        grid-template-columns: 1fr;
+
+        width: calc(100% - 36px);
+
+        min-height: auto;
+    }
+
+    .strip-label {
+        padding: 22px 0 18px;
+
+        border-bottom: 1px solid var(--border);
+    }
+
+    .strip-label i {
+        margin-top: 8px;
+    }
+
+    .strip-service {
+        grid-template-columns: 42px 1fr;
+
+        gap: 10px;
+
+        padding: 22px 0;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .service-icon {
+        font-size: 26px;
+
+        align-self: start;
+
+        padding-top: 1px;
+    }
+
+    .strip-service h3 {
+        font-size: 19px;
+
+        margin-bottom: 5px;
+    }
+
+    .strip-service p {
+        font-size: 13px;
+
+        line-height: 1.5;
+    }
+
+    .strip-more {
+        padding: 20px 0 18px;
+
+        border-right: none;
+        border-bottom: none;
+    }
+
+    .strip-more::before {
+        margin-bottom: 8px;
+    }
+
+    .strip-more > span {
+        font-size: 8px;
+
+        line-height: 1.35;
+    }
+
+    .strip-more a {
+        margin-top: 8px;
+
+        font-size: 14px;
+    }
+
+
+    /* =====================================================
+       OM OSS MOBIL
+       ===================================================== */
+
+    .about {
+        padding: 0;
+
+        background: var(--cream-light);
+    }
+
+    .about-grid {
+        width: 100%;
+
+        grid-template-columns: 1fr;
+
+        min-height: auto;
+    }
+
+    .about-heading {
+        background: var(--green-dark);
+
+        padding: 58px 18px 50px;
+    }
+
+    .about-content {
+        max-width: none;
+
+        padding: 47px 18px 60px;
+    }
+
+
+    /* =====================================================
+       TJÄNSTER MOBIL
+       ===================================================== */
+
+    .services {
+        padding: 65px 0;
+    }
+
+    .services-heading {
+        grid-template-columns: 1fr;
+
+        gap: 26px;
+
+        margin-bottom: 34px;
+    }
+
+    .services-heading p {
+        max-width: none;
+    }
+
+    .service-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .service-card {
+        min-height: auto;
+
+        padding: 24px 0 26px;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .service-card:first-child {
+        border-top: none;
+    }
+
+    .service-card:last-child {
+        border-bottom: none;
+    }
+
+    .service-card h3 {
+        font-size: 25px;
+
+        margin: 18px 0 10px;
+    }
+
+    .service-card p {
+        max-width: none;
+
+        font-size: 16px;
+
+        line-height: 1.55;
+    }
+
+    .service-card > span {
+        display: block;
+
+        font-size: 10px;
+    }
+
+
+    /* =====================================================
+       PROJEKT MOBIL – SISTA JUSTERING
+       ===================================================== */
+
+    .projects {
+        padding: 75px 0;
+    }
+
+    .project-grid {
+        grid-template-columns: 1fr;
+
+        gap: 40px;
+    }
+
+    .project-content {
+        max-width: none;
+    }
+
+    .project-content p {
+        font-size: 16px;
+    }
+
+    .project-areas {
+        margin-top: 32px;
+
+        grid-template-columns: 1fr;
+    }
+
+    .project-area {
+        min-height: 90px;
+
+        padding: 24px 0;
+
+        border-right: none;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .project-area:last-child {
+        border-bottom: none;
+    }
+
+
+    /* =====================================================
+       KONTAKT MOBIL – SISTA JUSTERING
+       ===================================================== */
+
+    .contact {
+        padding: 75px 0 25px;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+
+        gap: 45px;
+    }
+
+    .contact-content {
+        max-width: none;
+    }
+
+    .contact-content p {
+        font-size: 16px;
+    }
+
+
+    /* FOOTER */
+
+    .footer-inner {
+        min-height: 105px;
+
+        flex-direction: column;
+
+        align-items: flex-start;
+        justify-content: center;
+
+        gap: 12px;
+    }
+
+    .footer-brand {
+        font-size: 10px;
+    }
+
+    .footer p {
+        font-size: 12px;
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<header class="header">
+
+    <div class="header-inner">
+
+        <nav class="menu">
+
+            <a class="active" href="#hem">Hem</a>
+            <a href="#om">Om oss</a>
+            <a href="#tjanster">Tjänster</a>
+            <a href="#projekt">Projekt</a>
+            <a href="#kontakt">Kontakt</a>
+
+        </nav>
+
+        <a class="header-contact" href="#kontakt">
+            Kontakta oss <span>→</span>
+        </a>
+
+    </div>
+
+</header>
+
+
+<main>
+
+
+<section class="hero" id="hem">
+
+    <div class="hero-container hero-inner">
+
+        <div class="hero-content">
+
+            <div class="hero-kicker">
+
+                <span>G-SSON BYGGKONSULT</span>
+
+                <i></i>
+
+            </div>
+
+
+            <h1>
+
+                Projektledning.<br>
+
+                Entreprenad.<br>
+
+                <span>Engagemang.</span>
+
+            </h1>
+
+
+            <p class="hero-text">
+
+                Kvalificerat konsultstöd inom bygg, entreprenad och
+                projektgenomförande. Vi skapar värde genom kunskap,
+                erfarenhet och engagemang.
+
+            </p>
+
+
+            <div class="hero-buttons">
+
+                <a class="btn btn-primary" href="#tjanster">
+                    Våra tjänster <span>→</span>
+                </a>
+
+                <a class="btn btn-secondary" href="#kontakt">
+                    Kontakta oss <span>→</span>
+                </a>
+
+            </div>
+
+        </div>
+
+
+        <div class="hero-message">
+
+            <span>FRÅN IDÉ</span>
+            <span>TILL VERKLIGHET</span>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="service-strip">
+
+    <div class="service-strip-inner">
+
+        <div class="strip-label">
+
+            <span>VÅRA</span>
+            <span>TJÄNSTER</span>
+
+            <i></i>
+
+        </div>
+
+
+        <article class="strip-service">
+
+            <div class="service-icon">◎</div>
+
+            <div>
+
+                <h3>Projektledning</h3>
+
+                <p>
+                    Vi leder projekt från start till mål med fokus
+                    på kvalitet, tid och ekonomi.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="strip-service">
+
+            <div class="service-icon">◠</div>
+
+            <div>
+
+                <h3>Bygg & entreprenad</h3>
+
+                <p>
+                    Konsultstöd genom hela byggprocessen.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <article class="strip-service">
+
+            <div class="service-icon">▦</div>
+
+            <div>
+
+                <h3>Projektgenomförande</h3>
+
+                <p>
+                    Vi skapar förutsättningar för hållbara
+                    och framgångsrika projekt.
+                </p>
+
+            </div>
+
+        </article>
+
+
+        <div class="strip-more">
+
+            <span>ERFARENHET</span>
+            <span>SOM GÖR SKILLNAD</span>
+
+            <a href="#om">
+
+                Läs mer om oss <b>→</b>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="about" id="om">
+
+    <div class="about-grid">
+
+        <div class="about-heading">
+
+            <p class="section-label">
+                OM G-SSON BYGGKONSULT
+            </p>
+
+
+            <h2>
+
+                Erfarenhet som<br>
+
+                skapar trygghet<br>
+
+                i projektet.
+
+            </h2>
+
+        </div>
+
+
+        <div class="about-content">
+
+            <p class="lead">
+
+                G-sson Byggkonsult erbjuder kvalificerade
+                konsulttjänster inom bygg, entreprenad och
+                projektledning.
+
+            </p>
+
+
+            <p>
+
+                Vi arbetar nära beställare, entreprenörer och
+                projektorganisationer genom projektets olika skeden –
+                från tidig planering till produktion, uppföljning
+                och färdigställande.
+
+            </p>
+
+
+            <p>
+
+                Med teknisk förståelse, struktur och ett
+                lösningsorienterat arbetssätt skapar vi
+                förutsättningar för ett effektivt och
+                framgångsrikt genomförande.
+
+            </p>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="services" id="tjanster">
+
+    <div class="services-container">
+
+        <p class="section-label">
+            TJÄNSTER
+        </p>
+
+
+        <div class="services-heading">
+
+            <h2>
+
+                Kompetens genom<br>
+
+                hela projektet.
+
+            </h2>
+
+
+            <p>
+
+                Stöd från tidiga skeden till färdig produktion,
+                med fokus på struktur, kvalitet och framdrift.
+
+            </p>
+
+        </div>
+
+
+        <div class="service-grid">
+
+            <article class="service-card">
+
+                <span>01</span>
+
+                <h3>Projektledning</h3>
+
+                <p>
+                    Ledning, planering, samordning och uppföljning
+                    genom projektets olika skeden.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>02</span>
+
+                <h3>Byggledning</h3>
+
+                <p>
+                    Produktionsnära styrning och uppföljning
+                    med fokus på kvalitet, ekonomi och utförande.
+                </p>
+
+            </article>
+
+
+            <article class="service-card">
+
+                <span>03</span>
+
+                <h3>Entreprenad</h3>
+
+                <p>
+                    Konsultstöd inom entreprenad, produktion,
+                    samordning och projektgenomförande.
+                </p>
+
+            </article>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="projects" id="projekt">
+
+    <div class="project-container">
+
+        <div class="project-grid">
+
+            <div class="project-heading">
+
+                <p class="section-label">
+                    PROJEKT
+                </p>
+
+
+                <h2>
+
+                    Från planering<br>
+
+                    till färdigt<br>
+
+                    resultat.
+
+                </h2>
+
+            </div>
+
+
+            <div class="project-content">
+
+                <p>
+
+                    G-sson Byggkonsult arbetar i projekt där tekniska krav,
+                    ekonomi, samordning och produktion behöver fungera
+                    tillsammans.
+
+                </p>
+
+
+                <p>
+
+                    Genom erfarenhet från bygg- och entreprenadverksamhet
+                    skapar vi struktur och framdrift från första beslut
+                    till färdig leverans.
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <div class="project-areas">
+
+            <div class="project-area">
+
+                <span class="project-area-number">
+                    01
+                </span>
+
+                <h3>
+                    Projektledning
+                </h3>
+
+            </div>
+
+
+            <div class="project-area">
+
+                <span class="project-area-number">
+                    02
+                </span>
+
+                <h3>
+                    Bygg & entreprenad
+                </h3>
+
+            </div>
+
+
+            <div class="project-area">
+
+                <span class="project-area-number">
+                    03
+                </span>
+
+                <h3>
+                    Projektgenomförande
+                </h3>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+<section class="contact" id="kontakt">
+
+    <div class="contact-container contact-grid">
+
+        <div>
+
+            <p class="section-label">
+                KONTAKT
+            </p>
+
+
+            <h2>
+
+                Ska vi prata om<br>
+
+                ditt nästa projekt?
+
+            </h2>
+
+        </div>
+
+
+        <div class="contact-content">
+
+            <p>
+
+                Kontakta G-sson Byggkonsult för projektledning,
+                byggledning, entreprenad eller annat konsultstöd
+                inom bygg och projektgenomförande.
+
+            </p>
+
+
+            <div class="contact-details">
+
+                <div>
+
+                    <span>TELEFON</span>
+
+                    <strong>Telefonnummer</strong>
+
+                </div>
+
+
+                <div>
+
+                    <span>E-POST</span>
+
+                    <strong>E-postadress</strong>
+
+                </div>
+
+            </div>
+
+
+            <a class="btn btn-gold" href="#">
+
+                Kontakta oss <span>→</span>
+
+            </a>
+
+        </div>
+
+    </div>
+
+</section>
+
+
+</main>
+
+
+<footer class="footer">
+
+    <div class="footer-inner">
+
+        <div class="footer-brand">
+            G-SSON BYGGKONSULT
+        </div>
+
+        <p>
+            © 2026 G-sson Byggkonsult
+        </p>
+
+    </div>
+
+</footer>
+
+
+</body>
+
+</html>
